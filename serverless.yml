@@ -1,0 +1,36 @@
+service: circleci
+
+plugins:
+  - serverless-iam-roles-per-function
+  - serverless-python-requirements
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  deploy: ${opt:deploy, '${self:custom.stage}'}
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  runtime: python3.6
+  stackTags:
+      STACK: "${self:service}"
+      STAGE: ${opt:stage, 'dev'}
+      DEPLOY: ${self:custom.deploy}
+
+  environment:  
+    Region: ${self:provider.region}
+    Stage: ${self:custom.deploy}
+
+  iamRoleStatements:
+   - Effect: "Allow"
+     Action:
+       - "logs:*"
+     Resource: "*"
+  logRetentionInDays: 14
+
+functions:      
+  hello_world:
+    handler: hello_world.lambda_handler  
+    timeout: 180
+    iamRoleStatementsInherit: true

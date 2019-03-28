@@ -1,0 +1,17 @@
+{
+    "name": "circlecitest",
+    "version": "1.0.0",
+    "description": "Circlecif lambdas",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+      "serverless": "^1.38.0",
+      "serverless-iam-roles-per-function": "^1.0.4",
+      "serverless-python-requirements": "^4.3.0"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
