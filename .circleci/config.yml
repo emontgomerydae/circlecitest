@@ -8,5 +8,5 @@ jobs:
       - run: echo "hello world" # run the `echo` command
       - run: node --version
       - run: python --version
-      - run: pwd
+      - run: npm i
       - run: ls
