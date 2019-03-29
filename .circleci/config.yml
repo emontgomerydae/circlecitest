@@ -9,6 +9,6 @@ jobs:
       - run: node --version
       - run: python --version
       - run: pip --version
-      - run: pip install awscli --upgrade
+      - run: pip install awscli --upgrade --user
       - run: npm i
       - run: ls
