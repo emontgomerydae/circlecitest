@@ -12,3 +12,4 @@ jobs:
       - run: pip install awscli --upgrade --user
       - run: npm i
       - run: ls -lah
+      - run: find / -name "*aws*"
