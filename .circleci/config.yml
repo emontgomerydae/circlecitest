@@ -11,10 +11,6 @@ jobs:
       - run: pip --version
       - run: sudo apt-get install python-dev
       - run: sudo apt list --installed
-      - run: pip install awscli --upgrade --user
-      - run: echo $PATH
-      - run: sudo export PATH=$PATH:/home/circleci/.local/bin
-      - run: echo $PATH
-      - run: ls -lah
-      - run: sudo ls -lah
-      - run: aws --version
+      - run: curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+      - run: unzip awscli-bundle.zip
+      - run: ./awscli-bundle/install -b ~/bin/aws
