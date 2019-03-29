@@ -5,13 +5,12 @@ jobs:
       - image: circleci/python:3.6.8-node # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - run: sudo apt-get install python-dev
       - run: node --version
       - run: python --version
       - run: pip --version
-      - run: sudo apt-get install python-dev
-      - run: sudo apt list --installed
       - run: curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
       - run: unzip awscli-bundle.zip
       - run: ./awscli-bundle/install -b ~/bin/aws
       - run: /home/circleci/bin/aws --version
+      - run: npm i
