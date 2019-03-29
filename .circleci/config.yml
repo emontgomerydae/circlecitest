@@ -13,6 +13,8 @@ jobs:
       - run: sudo apt list --installed
       - run: pip install awscli --upgrade --user
       - run: echo $PATH
-      - run: export PATH=$PATH:/home/circleci/.local/bin
+      - run: sudo export PATH=$PATH:/home/circleci/.local/bin
       - run: echo $PATH
+      - run: ls -lah
+      - run: sudo ls -lah
       - run: aws --version
