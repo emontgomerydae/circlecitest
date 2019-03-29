@@ -14,3 +14,4 @@ jobs:
       - run: curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
       - run: unzip awscli-bundle.zip
       - run: ./awscli-bundle/install -b ~/bin/aws
+      - run: /home/circleci/bin/aws --version
