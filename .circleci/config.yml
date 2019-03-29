@@ -9,5 +9,7 @@ jobs:
       - run: node --version
       - run: python --version
       - run: pip --version
+      - run: sudo apt-get install python-dev
       - run: sudo apt list --installed
       - run: pip install awscli --upgrade --user
+      
