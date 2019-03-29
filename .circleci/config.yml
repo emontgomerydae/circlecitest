@@ -8,5 +8,7 @@ jobs:
       - run: echo "hello world" # run the `echo` command
       - run: node --version
       - run: python --version
+      - run: pip --version
+      - run: pip install awscli --upgrade
       - run: npm i
       - run: ls
