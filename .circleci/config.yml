@@ -12,4 +12,7 @@ jobs:
       - run: sudo apt-get install python-dev
       - run: sudo apt list --installed
       - run: pip install awscli --upgrade --user
+      - run: echo $PATH
+      - run: export PATH=$PATH:/home/circleci/.local/bin
+      - run: echo $PATH
       - run: aws --version
