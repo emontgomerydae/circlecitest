@@ -13,7 +13,7 @@ jobs:
       - run: npm i
       - run: ls -lah
       - run: ls -lah
-      - run: find / -name "*aws*"
+      - run: find -name "*aws*"
       - run: ls -lah
       - run: which aws
       - run: echo $PATH
