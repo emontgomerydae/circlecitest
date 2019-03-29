@@ -10,6 +10,6 @@ jobs:
       - run: python --version
       - run: pip --version
       - run: pip install awscli --upgrade --user
-      - run: aws --version
+      - run: whoami
       - run: npm i
       - run: ls
