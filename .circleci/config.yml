@@ -9,11 +9,5 @@ jobs:
       - run: node --version
       - run: python --version
       - run: pip --version
-      - run: pip install awscli --upgrade --user
+      - run: pip install awscli --upgrade --user && aws --version
       - run: npm i
-      - run: ls -lah
-      - run: ls -lah
-      - run: find -name "*aws*"
-      - run: ls -lah
-      - run: which aws
-      - run: echo $PATH
