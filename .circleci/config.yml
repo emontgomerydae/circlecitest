@@ -9,5 +9,6 @@ jobs:
       - run: node --version
       - run: python --version
       - run: pip --version
-      - run: pip install awscli --upgrade --user && aws --version
+      - run: pip install awscli --upgrade --user
       - run: npm i
+      - run: sudo apt-get install python-dev
