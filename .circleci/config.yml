@@ -11,5 +11,8 @@ jobs:
       - run: pip --version
       - run: pip install awscli --upgrade --user
       - run: whoami
+      - run: pwd
+      - run: cd ~
+      - run: pwd
       - run: npm i
       - run: ls
