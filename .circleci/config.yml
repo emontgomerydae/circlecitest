@@ -12,4 +12,4 @@ jobs:
       - run: sudo apt-get install python-dev
       - run: sudo apt list --installed
       - run: pip install awscli --upgrade --user
-      
+      - run: aws --version
