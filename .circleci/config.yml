@@ -14,4 +14,4 @@ jobs:
       - run: ./awscli-bundle/install -b ~/bin/aws
       - run: /home/circleci/bin/aws --version
       - run: npm i
-      - run: aws s3 ls
+      - run: /home/circleci/bin/aws s3 ls
