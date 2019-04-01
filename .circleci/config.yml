@@ -15,3 +15,7 @@ jobs:
       - run: /home/circleci/bin/aws --version
       - run: npm i
       - run: /home/circleci/bin/aws s3 ls
+      - run: echo $PATH
+      - run: export PATH=$PATH:/home/circleci/bin
+      - run: echo $PATH
+      - run: aws s3 ls
