@@ -21,15 +21,15 @@ jobs:
       - run: npm i
       - run: ls
       - persist_to_workspace:
-          root: /home/circleci/project
+          root: /home/circleci
           paths:
-            - node_modules
+            - project
   deploy-dev:
     docker:
       - image: circleci/python:3.6.8-node
     steps:
       - attach_workspace:
-          at: /home/circleci/project
+          at: /home/circleci
       - run: node_modules/.bin/serverless deploy -v -s 'dev' --deploy 'dev' --region ${AWS_DEFAULT_REGION}
           
 workflows:
