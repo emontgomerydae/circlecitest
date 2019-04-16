@@ -31,6 +31,13 @@ jobs:
       - attach_workspace:
           at: /home/circleci
       - run: node_modules/.bin/serverless deploy -v -s 'dev' --deploy 'dev' --region ${AWS_DEFAULT_REGION}
+  deploy-prod:
+    docker:
+      - image: circleci/python:3.6.8-node
+    steps:
+      - attach_workspace:
+          at: /home/circleci
+      - run: node_modules/.bin/serverless deploy -v -s 'prod' --deploy 'prod' --region ${AWS_DEFAULT_REGION}
           
 workflows:
   version: 2
@@ -48,3 +55,9 @@ workflows:
           filters:
             branches:
               only: dev
+      - deploy-prod:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
