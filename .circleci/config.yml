@@ -19,8 +19,9 @@ jobs:
       - run: pwd
       - run: ls
       - run: npm i
+      - run: ls
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /home/circleci/project
           paths:
             - node_modules
   deploy-dev:
@@ -28,7 +29,7 @@ jobs:
       - image: circleci/python:3.6.8-node
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: /home/circleci/project
       - run: node_modules/.bin/serverless deploy -v -s 'dev' --deploy 'dev' --region ${AWS_DEFAULT_REGION}
           
 workflows:
