@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - test
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/python:3.6.8-node # the primary container, where your job's commands are run
     steps:
